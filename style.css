@@ -85,3 +85,11 @@ table, th, td {
 .hidden {
   display: none;
 }
+.error_msg {
+  display: block;
+    padding: 2px 0px 0;
+    position: relative;
+    color:red;
+    font-family: 'EB Garamond', serif;
+    font-size: 12px;
+}

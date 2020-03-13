@@ -25,7 +25,7 @@ button.addEventListener('click', function(event){
     if (username === "") {
         let errorSpan = document.getElementById("username").nextElementSibling;
 
-        errorSpan.innerText = 'Klaida';
+        errorSpan.innerText = 'Langelis neturi būti tuščias!';
         errorSpan.classList.remove('hidden');
 
         valid = false;
@@ -33,7 +33,7 @@ button.addEventListener('click', function(event){
     if (surname === "") {
         let errorSpan = document.getElementById("surname").nextElementSibling;
 
-        errorSpan.innerText = 'Klaida';
+        errorSpan.innerText = 'Langelis neturi būti tuščias!';
         errorSpan.classList.remove('hidden');
 
         valid = false;
@@ -50,7 +50,7 @@ button.addEventListener('click', function(event){
     if (email === "") {
         let errorSpan = document.getElementById("email").nextElementSibling;
 
-        errorSpan.innerText = 'Klaida';
+        errorSpan.innerText = 'Langelis neturi būti tuščias!';
         errorSpan.classList.remove('hidden');
 
         valid = false;
