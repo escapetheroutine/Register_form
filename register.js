@@ -1,19 +1,18 @@
-
 let button = document.getElementById("login");
 
 
-button.addEventListener('click', function(event){
+button.addEventListener('click', function (event) {
     event.preventDefault();
 
-    let username = document.getElementById("username").value;
+    let name = document.getElementById("name").value;
     let surname = document.getElementById("surname").value;
     let email = document.getElementById("email").value;
     let tel = document.getElementById("tel").value;
-    let visitedItaly = document.getElementById("italy_visited").checked ;
+    let visitedItaly = document.getElementById("italy_visited").checked;
     let gydId = document.getElementById("select").value;
     let valid = true;
 
-    let pacientInfo = username + ' ' + surname + ' ' + tel + ' ' + email;
+    let pacientInfo = name + ' ' + surname + ' ' + tel + ' ' + email;
 
     if (visitedItaly) {
         pacientInfo += ' Lankėsi Italijoje';
@@ -22,8 +21,8 @@ button.addEventListener('click', function(event){
     }
 
     // VALIDATIONS
-    if (username === "") {
-        let errorSpan = document.getElementById("username").nextElementSibling;
+    if (name === "") {
+        let errorSpan = document.getElementById("name").nextElementSibling;
 
         errorSpan.innerText = 'Langelis neturi būti tuščias!';
         errorSpan.classList.remove('hidden');
@@ -38,7 +37,7 @@ button.addEventListener('click', function(event){
 
         valid = false;
     }
-    
+
     if (!email.match(/\w+@\w+\.\w+/)) {
         let errorSpan = document.getElementById("email").nextElementSibling;
 
@@ -55,7 +54,7 @@ button.addEventListener('click', function(event){
 
         valid = false;
     }
-    if (tel != "" && !tel.match(/^\d+$/)) {
+    if (tel != "" && !tel.match(/^\+?\d+$/)) {
         let errorSpan = document.getElementById("tel").nextElementSibling;
 
         errorSpan.innerText = 'Neteisingas tel.numeris';
@@ -64,11 +63,9 @@ button.addEventListener('click', function(event){
         valid = false;
     }
 
-    if (valid){
+    if (valid) {
         document.getElementById(gydId).innerText = pacientInfo;
         document.getElementById("register_form").style.display = "none";
         document.getElementById("doc_table").classList.remove('hidden');
     }
 });
-
-
