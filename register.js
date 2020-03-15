@@ -1,13 +1,26 @@
 let button = document.getElementById("login");
+let backButton = document.getElementById("button_back");
 
+backButton.addEventListener('click', function (event) {
+    event.preventDefault();
+    document.getElementById("register_form").classList.remove('hidden');
+    document.getElementById("doc_table").classList.add('hidden');
+});
 
 button.addEventListener('click', function (event) {
     event.preventDefault();
+    let nameInput = document.getElementById("name");
+    let name = nameInput.value;
 
-    let name = document.getElementById("name").value;
-    let surname = document.getElementById("surname").value;
-    let email = document.getElementById("email").value;
-    let tel = document.getElementById("tel").value;
+    let surnameInput = document.getElementById("surname");
+    let surname = surnameInput.value;
+
+    let emailInput = document.getElementById("email");
+    let email = emailInput.value;
+
+    let telInput = document.getElementById("tel");
+    let tel = telInput.value;
+
     let visitedItaly = document.getElementById("italy_visited").checked;
     let gydId = document.getElementById("select").value;
     let valid = true;
@@ -65,7 +78,12 @@ button.addEventListener('click', function (event) {
 
     if (valid) {
         document.getElementById(gydId).innerText = pacientInfo;
-        document.getElementById("register_form").style.display = "none";
+        document.getElementById("register_form").classList.add('hidden');
         document.getElementById("doc_table").classList.remove('hidden');
+
+        nameInput.value = "";
+        surnameInput.value = "";
+        emailInput.value = "";
+        telInput.value = "";
     }
 });
